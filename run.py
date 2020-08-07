@@ -1,5 +1,6 @@
 import os, time, datetime, argparse, sys
 import pandas as pd
+import subprocess
 
 # List of letters that Monica can't hear
 cant_hear = ['s','t','h','c','k','f','g','p',
@@ -72,9 +73,10 @@ def main():
 
 	i =1
 	while i != 2: # creating infinite loop 
-
+		subprocess.run('xinput set-prop 12 "Device Enabled" 1', shell=True, check=True)
 		print('\n' *20) #number can be changed
 		user_input = input('                                                Write your sentence here!\n\n\n')
+		subprocess.run('xinput set-prop 12 "Device Enabled" 0', shell=True, check=True)
 		n = 0
 
 		# loop to make time look like a robot

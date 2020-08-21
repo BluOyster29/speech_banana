@@ -6,8 +6,7 @@ The program takes in a string and returns a string that is an equivelence of wha
 
 The program also collects anonymised and timestamped strings from the user and saves to csv
 
-Event:
-https://www.facebook.com/events/734213810763046/?__cft__[0]=AZWha2VuUSbpkKtMSVA_T5I0ZEXkPNC2RLBhLkXz3HtimeQBEM3C1QKv6Bob3V_zca1ZbSUKTJ3ymrKjxclR7GTjLDiGxQjA6sKGOd6_R3bJp1XUzOGbVpDLwR2eipeKBe0&__tn__=H-R
+Facebook event: https://www.facebook.com/events/734213810763046
 
-Website:
-http://www.monikabalu.lt/
+
+Monika's Website: http://www.monikabalu.lt/

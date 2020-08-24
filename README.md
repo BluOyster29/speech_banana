@@ -9,4 +9,4 @@ The program also collects anonymised and timestamped strings from the user and s
 Facebook event: https://www.facebook.com/events/734213810763046
 
 
-Monika's Website: http://www.monikabalu.lt/
+Monika's Website: http://www.monikabalu.com

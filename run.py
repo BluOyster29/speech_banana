@@ -112,11 +112,12 @@ def make_sexy(text, cols, height):
 
 	'''
 	print(text.center(cols))
-
-	for i in range(15):
+	
+	for i in range(7):
 		print('.'.center(cols))
 
 		time.sleep(0.7)
+	time.sleep(1.5)
 
 def main():
 	cols, rows, = get_dims()
@@ -128,11 +129,7 @@ def main():
 	while i != 2: # creating infinite loop 
 		print(banana)
 
-		subprocess.run('xinput set-prop 12 "Device Enabled" 1', shell=True, check=True)
-		
-		#print('\n' *14) #number can be changed
-		#print('{}{}'.format(' '*20, banana))
-		
+		subprocess.run('xinput set-prop 11 "Device Enabled" 1', shell=True, check=True)
 		print('\n'*3)
 		text = 'Type your sentence below!'
 		print('{}Hello!\n{}Do you want to see how I hear?'.format(' '*(int(cols/2-(6 /2))), ' '*(int(cols/2-(29 /2)))))		
@@ -140,7 +137,7 @@ def main():
 		if user_input == 'quit this fucker':
 			exit(0)
 		
-		subprocess.run('xinput set-prop 12 "Device Enabled" 0', shell=True, check=True)
+		subprocess.run('xinput set-prop 11 "Device Enabled" 0', shell=True, check=True)
 		n = 0
 
 		# loop to make time look like a robot
@@ -151,10 +148,10 @@ def main():
 
 		print("\n")
 		timestamp = get_time()#yyyy-mm-dd_mm-ss
-		audio_path = 'data/audio/{}.mp3'.format(timestamp)
+		#audio_path = 'data/audio/{}.mp3'.format(timestamp)
 
 		monified = monify(user_input)
-		monified_audio = gtts.gTTS(monified)
+		#monified_audio = gtts.gTTS(monified)
 		#monified_audio.save(audio_path)
 		#p = vlc.MediaPlayer(audio_path)
 		#p.play()

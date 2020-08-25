@@ -3,7 +3,6 @@ import pandas as pd
 #import gtts, vlc
 from num_cipher import encrypt
 import shutil, subprocess
-import click
 #f = Figlet(font='big')
 
 # List of letters that Monica can't hear
@@ -134,7 +133,7 @@ def main():
 		print('\n'*3)
 		text = 'Type your sentence below!'
 		print('{}Hello!\n{}Do you want to see how I hear?'.format(' '*(int(cols/2-(6 /2))), ' '*(int(cols/2-(29 /2)))))		
-		user_input = click.prompt(u'{}{}\n\n\n{}'.format(' '*(int(cols/2- (len(text)/ 2))), text,' '*(int(cols/4))).center(int(cols/4)),prompt_suffix='')
+		user_input = input('{}{}\n\n\n{}'.format(' '*(int(cols/2- (len(text)/ 2))), text,' '*(int(cols/4))).center(int(cols/4)))
 		if user_input == 'quit this fucker':
 			exit(0)
 		#print(user_input.center(cols))

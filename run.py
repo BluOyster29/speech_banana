@@ -117,20 +117,22 @@ def make_sexy(text, cols, height):
 	time.sleep(1.5)
 
 def main():
+	
 	cols, rows, = get_dims()
 	
 	
 	os.system("xinput list")
-	key_num = input("What is the keyboard's number, xinput list then look for the keyboard id: ")
+	#key_num = input("What is the keyboard's number, xinput list then look for the keyboard id: ")
 	banana = gen_banana(cols)
 	
 	i =1
 	
 	while i != 2: # creating infinite loop 
+		os.system('clear')
 		print("\n" * 7)
 		print(banana)
 
-		subprocess.run('xinput set-prop {} "Device Enabled" 1'.format(str(key_num)), shell=True, check=True)
+		subprocess.run('xinput set-prop 6 "Device Enabled" 1', shell=True, check=True)
 		print('\n'*3)
 		text = 'Type your sentence below!'
 		print('{}Hello!\n{}Do you want to see how I hear?'.format(' '*(int(cols/2-(6 /2))), ' '*(int(cols/2-(29 /2)))))		
@@ -138,7 +140,7 @@ def main():
 		if user_input == 'quit this fucker':
 			exit(0)
 		#print(user_input.center(cols))
-		subprocess.run('xinput set-prop {} "Device Enabled" 0'.format(str(key_num)), shell=True, check=True)
+		subprocess.run('xinput set-prop 6 "Device Enabled" 0', shell=True, check=True)
 		n = 0
 
 		# loop to make time look like a robot
@@ -162,7 +164,7 @@ def main():
 		except:
 			encrypted_input = 'encryption failed'
 		update_data(timestamp, monified, encrypted_input)
-		os.system('clear') #clears screen
+		#os.system('clear') #clears screen
 
 def get_dims():
 

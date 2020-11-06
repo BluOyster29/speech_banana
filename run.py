@@ -131,47 +131,49 @@ def main():
 	i =1
 	
 	while i != 2: # creating infinite loop 
-		os.system('clear')
-		print("\n" * 7)
-		print(banana)
 
-		subprocess.run('xinput set-prop 6 "Device Enabled" 1', shell=True, check=True)
-		print('\n'*3)
-		text = 'Type your sentence below!'
-		print('{}Hello!\n{}Do you want to see how I hear?'.format(' '*(int(cols/2-(6 /2))), ' '*(int(cols/2-(29 /2)))))		
-		user_input = click.prompt(u'{}{}\n\n\n{}'.format(' '*(int(cols/2- (len(text)/ 2))), text,' '*(int(cols/4))).center(int(cols/4)),prompt_suffix='')
-		if user_input == 'quit this fucker':
-			exit(0)
-		#print(user_input.center(cols))
-		subprocess.run('xinput set-prop 6 "Device Enabled" 0', shell=True, check=True)
-		n = 0
+		try:
+			os.system('clear')
+			print("\n" * 7)
+			print(banana)
 
-		# loop to make time look like a robot
-		while n != 5: #number = seconds
-			print(".".center(cols))
-			time.sleep(1.2)
-			n += 1
+			subprocess.run('xinput set-prop 6 "Device Enabled" 1', shell=True, check=True)
+			print('\n'*3)
+			text = 'Type your sentence below!'
+			print('{}Hello!\n{}Do you want to see how I hear?'.format(' '*(int(cols/2-(6 /2))), ' '*(int(cols/2-(29 /2)))))		
+			user_input = click.prompt(u'{}{}\n\n\n{}'.format(' '*(int(cols/2- (len(text)/ 2))), text,' '*(int(cols/4))).center(int(cols/4)),prompt_suffix='')
+			if user_input == 'quit this fucker':
+				exit(0)
+			#print(user_input.center(cols))
+			subprocess.run('xinput set-prop 6 "Device Enabled" 0', shell=True, check=True)
+			n = 0
 
-		print("\n")
-		timestamp = get_time()#yyyy-mm-dd_mm-ss
-		#audio_path = 'data/audio/{}.mp3'.format(timestamp)
+			# loop to make time look like a robot
+			while n != 5: #number = seconds
+				print(".".center(cols))
+				time.sleep(1.2)
+				n += 1
 
-		monified = monify(user_input)
-		#monified_audio = gtts.gTTS(monified)
-		#monified_audio.save(audio_path)
-		#p = vlc.MediaPlayer(audio_path)
-		#p.play()
-		make_sexy(monified, cols,rows)
-		'''try:
-			encrypted_input = encrypt(user_input)
-		except:
-			encrypted_input = 'encryption failed'''
-		update_data(timestamp, monified, user_input)
-		#os.system('clear') #clears screen
+			print("\n")
+			timestamp = get_time()#yyyy-mm-dd_mm-ss
+			#audio_path = 'data/audio/{}.mp3'.format(timestamp)
+
+			monified = monify(user_input)
+			#monified_audio = gtts.gTTS(monified)
+			#monified_audio.save(audio_path)
+			#p = vlc.MediaPlayer(audio_path)
+			#p.play()
+			make_sexy(monified, cols,rows)
+			'''try:
+				encrypted_input = encrypt(user_input)
+			except:
+				encrypted_input = 'encryption failed'''
+			update_data(timestamp, monified, user_input)
+			#os.system('clear') #clears screen
 
 		except KeyboardInterrupt:
 			continue
-		
+
 def get_dims():
 
 	cols, rows = shutil.get_terminal_size()

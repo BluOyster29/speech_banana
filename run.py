@@ -171,7 +171,7 @@ def main():
 			update_data(timestamp, monified, user_input)
 			#os.system('clear') #clears screen
 
-		except KeyboardInterrupt:
+		except click.exceptions.Abort:
 			continue
 
 def get_dims():

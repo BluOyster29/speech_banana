@@ -120,9 +120,12 @@ def main():
 	
 	cols, rows, = get_dims()
 	
-	
+	print('Hello Monika!')
+	time.sleep(2)
+	print('Speech Banana is loading...')
+	time.sleep(2)	
 	os.system("xinput list")
-	#key_num = input("What is the keyboard's number, xinput list then look for the keyboard id: ")
+	key_num = input("What is the keyboard's number, xinput list then look for the keyboard id: ")
 	banana = gen_banana(cols)
 	
 	i =1
@@ -159,13 +162,16 @@ def main():
 		#p = vlc.MediaPlayer(audio_path)
 		#p.play()
 		make_sexy(monified, cols,rows)
-		try:
+		'''try:
 			encrypted_input = encrypt(user_input)
 		except:
-			encrypted_input = 'encryption failed'
-		update_data(timestamp, monified, encrypted_input)
+			encrypted_input = 'encryption failed'''
+		update_data(timestamp, monified, user_input)
 		#os.system('clear') #clears screen
 
+		except KeyboardInterrupt:
+			continue
+		
 def get_dims():
 
 	cols, rows = shutil.get_terminal_size()
